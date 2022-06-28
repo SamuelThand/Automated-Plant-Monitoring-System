@@ -61,6 +61,8 @@ To build this system, you will need the following:
 |6MM Drill Bit|Needed for drilling holes for the water hose and water pump cables in the reservoar.|![](https://www.jula.se/globalassets/catalog/productimages/181400.jpg?width=458&height=458&scale=both&bgcolor=white)|
 |Electric Screwdriver|For drilling|![](https://www.jula.se/globalassets/catalog/productimages/007379.jpg?width=458&height=458&scale=both&bgcolor=white)
 
+---
+
 ## Computer, LoPy4 & Raspberry Pi 4 Setup
 
 This project was built using Ubuntu 20.04LTS, and the tutorial will show the steps for this OS.
@@ -442,7 +444,7 @@ This is the loop which drives the system. The sleep cycle can easily be adjusted
 
 ---
 
-### Get it running
+### Get data transmission from LoPy4 to Adafruit running
 
 **First:** Make sure you have completed the setup and connected the system correctly.  
 
@@ -461,7 +463,7 @@ This is the loop which drives the system. The sleep cycle can easily be adjusted
 
 <br><br>
 
-### Raspberry Pi 4 - TIG stack
+### Get TIG-stack on the Raspberry Pi 4 running
 
 The docker-compose, and telegraf.conf files can be downloaded from [Github](https://github.com/SamuelThand/Automated-Plant-Monitoring-System).
 
@@ -737,7 +739,7 @@ Grafana is very good and flexible for this type of monitoring.
 
 ---
 
-### Get it running
+### Get data visualisation with Grafana running
 
 To setup a dashboard with panels and webhook alerts:
 
