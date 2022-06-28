@@ -367,7 +367,7 @@ Using these services together with **Docker-compose** really makes deploying and
 
 ## The Code - Python project and TIG-stack
 
-The code can be downloaded from [Github]().
+The code can be downloaded from [Github](https://github.com/SamuelThand/Automated-Plant-Monitoring-System).
 
 ---
 
@@ -460,7 +460,7 @@ This is the loop which drives the system. The sleep cycle can easily be adjusted
 
 ### Raspberry Pi 4 - TIG stack
 
-The docker-compose, and telegraf.conf files can be downloaded from [Github]().
+The docker-compose, and telegraf.conf files can be downloaded from [Github](https://github.com/SamuelThand/Automated-Plant-Monitoring-System).
 
 ---
 
