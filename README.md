@@ -179,7 +179,7 @@ If successful, the docker service should be up and running. Check with:
 ![](https://i.imgur.com/nzrroUK.png)
 
 
-**Now you should be ready to configure and deploy the system, which is described under [Get it running](#get-it-running)**.
+**Now you should be ready to build, configure and deploy the system.<br><br>
 
 ## Putting Everything Together
 
@@ -351,7 +351,7 @@ The battery life of the system could also be dramatically improved by increasing
 ![](https://i.imgur.com/ojsHMoX.png)
 *Source: [Prof. Dr. Anna Förster - Energy in IoT]()*
 
-As displayed in the picture above and discussed in the video, studies have shown that the theoretical estimates of IoT system lifetimes are **significantly much higher** then the real world resulting lifetimes. This indicates that you should always take these estimates as an optimistic estimate, and make sure to have  margins in your power strategy - since the actual battery life will be much lower.
+As displayed in the picture above and discussed in the video, studies have shown that the theoretical estimates of IoT system lifetimes are **significantly much higher** then the real world resulting lifetimes. This indicates that you should always take these estimates as an optimistic estimate, and make sure to have  margins in your power strategy - since the actual battery life will be much lower.<br><br>
 
 ## Platform
 
@@ -363,9 +363,9 @@ We are using **InfluxDB** as the database manager, since it is made specifically
 
 **Grafana** is very easy to configure, and InfluxDB can easily be added as a data source. Collects data from the database using InfluxQL/Flux queries which you can write yourself or build from a gui tool. Easy to build and customize dashboards according to your needs, and very easy to set up webhooks for alerting.
 
-Using these services together with **Docker-compose** really makes deploying and configuring this TIG-stack very easy. I also wanted to explore docker, use my linux background with self hosting and make the system scalable.
+Using these services together with **Docker-compose** really makes deploying and configuring this TIG-stack very easy. I also wanted to explore docker, use my linux background with self hosting and make the system scalable.<br><br>
 
-## The Code - Python project and TIG-stack
+## The Code - MicroPython project and TIG-stack
 
 The code can be downloaded from [Github](https://github.com/SamuelThand/Automated-Plant-Monitoring-System).
 
@@ -440,6 +440,7 @@ This is the loop which drives the system. The sleep cycle can easily be adjusted
 
 ![](https://i.imgur.com/UFKhIby.png)
 
+---
 
 ### Get it running
 
@@ -457,6 +458,8 @@ This is the loop which drives the system. The sleep cycle can easily be adjusted
 6. Let the program run, and you should receive data on your Adafruit feed.
 
 ![](https://i.imgur.com/G5njtGA.png)
+
+<br><br>
 
 ### Raspberry Pi 4 - TIG stack
 
@@ -626,7 +629,7 @@ Enter your your information matching the docker-compose info **INFLUX_DB** for D
 
 ![](https://i.imgur.com/pQMTDey.png)
 
-Now the TIG stack should be up and running - Telegraf is collecting data over MQTT and sending it to InfluxDB, and Grafana can directly query the Influx database using InfluxQL.
+Now the TIG stack should be up and running - Telegraf is collecting data over MQTT and sending it to InfluxDB, and Grafana can directly query the Influx database using InfluxQL.<br><br>
 
 ## Transmitting the data / connectivity
 
@@ -637,6 +640,8 @@ The data is transmitted once every 5 minutes from the LoPy4 over the internet to
 The wireless protocol I use is WiFi - IEEE 802.11n on 2.4GHz which is a pretty old standard approved in 2009. The reason for this is that I have no fiber internet at home, and use an older 4G router without support for these newer protocols. :cry:
 
 The LoPy4 sends, and the Raspberry Pi 4 receives data over MQTT.
+
+---
 
 ### Elaboration - Data transmission, Wireless Protocols
 
@@ -658,6 +663,8 @@ From this image it can be seen that LoRa has a much higher range than WiFi, as w
 However, since the system is currently deployed inside the home - running on AC wall power and WiFi is the obvious solution. Since LoRa coverage is scarce at my location it's also not ideal, if you don't want to run your own Helium Gateway for example.
 
 The frequency of data transmission is also something that would need consideration if the system were deployed outside. Do you really need new data each 5 minutes? Perhaps it would suffice with a transmission each hour - which would drastically improve battery life. However - Since the system is currently deployed at home, there is no need to be nitpicky about this.
+
+---
 
 ### Elaboration - Transport Protocols
 
@@ -687,6 +694,8 @@ And once the temperature had sunk to acceptable levels:
 
 ![](https://i.imgur.com/pppOtH5.png)
 
+---
+
 ###  Choice of database
 
 For elaboration on this - see subheading under **Platform**
@@ -697,6 +706,7 @@ On Adafruit, the data is stored for 30 days, and on InfluxDB the retention polic
 
 I have a MicroSD card of 128GB on the Raspberry Pi, which is a huge size for this small data. Only a few KB of data has been stored after running this system for several days, which means the system lifetime would be bottlenecked by the SD card deteriorating from age before the storage would become full. This retention policy is not an issue in this case, but needs to be considered if the data is larger.  
 
+---
 
 ### Automations/triggers of the data
 
@@ -724,6 +734,8 @@ If the humidity is above 50%
 If the soil moisture is above 50% for 2 days
 
 Grafana is very good and flexible for this type of monitoring.
+
+---
 
 ### Get it running
 
@@ -764,7 +776,7 @@ Repeat these steps until you have created a dashboard with panels and alerts for
 
 **Now you should have an automated plant monitoring system up and running!**
 
-![](https://i.imgur.com/xSKTi4V.png)
+![](https://i.imgur.com/xSKTi4V.png)<br><br>
 
 ## Finalizing the design
 
@@ -791,6 +803,8 @@ The Discord feed with alerts (Very hot and bright day)
 The Workstation
 
 ![](https://i.imgur.com/FUsttto.jpg)
+
+---
 
 ### Thoughts
 
