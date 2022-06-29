@@ -181,7 +181,7 @@ If successful, the docker service should be up and running. Check with:
 ![](https://i.imgur.com/nzrroUK.png)
 
 
-**Now you should be ready to build, configure and deploy the system.<br><br>
+**Now you should be ready to build, configure and deploy the system.**<br><br>
 
 ## Putting Everything Together
 
@@ -381,23 +381,23 @@ The structure of the MicroPython project
 
 The files located in the lib directory are libraries(drivers) for different aspects of the project.
 
-Connections.py is my own library which handles WLAN and MQTT connections.
+[Connections.py](https://github.com/SamuelThand/Automated-Plant-Monitoring-System/blob/main/micropython-project/lib/connections.py) is my own library which handles WLAN and MQTT connections.
 
-errno.py is constants for different error codes related to MQTT connections.
+[errno.py](https://github.com/SamuelThand/Automated-Plant-Monitoring-System/blob/main/micropython-project/lib/errno.py) is constants for different error codes related to MQTT connections.
 
-keys.py is where WLAN and MQTT credentials are stored. (Not a secure solution for a production system, but fine for an isolated device inside a home network with no sensitive data)
+[keys.py](https://github.com/SamuelThand/Automated-Plant-Monitoring-System/blob/main/micropython-project/lib/keys.py) is where WLAN and MQTT credentials are stored. (Not a secure solution for a production system, but fine for an isolated device inside a home network with no sensitive data)
 
-dht.py is a driver for the DHT-11 sensor, which provides functionality for processing and interpreting the digital signals from the sensor. [Link](https://github.com/JurassicPork/DHT_PyCom)
+[dht.py](https://github.com/SamuelThand/Automated-Plant-Monitoring-System/blob/main/micropython-project/lib/dht.py) is a driver for the DHT-11 sensor, which provides functionality for processing and interpreting the digital signals from the sensor.
 
-simple2.py and robust2.py are MQTT drivers, where simple2.py provides a barebones MQTT client, and robust2.py provides extra functionality such as reconnection handling. [Link](https://github.com/fizista/micropython-umqtt.robust2)
+[simple2.py](https://github.com/SamuelThand/Automated-Plant-Monitoring-System/blob/main/micropython-project/lib/simple2.py) and [robust2.py](https://github.com/SamuelThand/Automated-Plant-Monitoring-System/blob/main/micropython-project/lib/robust2.py) are MQTT drivers, where simple2 provides a barebones MQTT client, and robust2 provides extra functionality such as reconnection handling.
 
-boot.py gets executed when the device is booted, and simply calls the wlan_connect function using the credentials stored in keys.py.
+[boot.py](https://github.com/SamuelThand/Automated-Plant-Monitoring-System/blob/main/micropython-project/boot.py) gets executed when the device is booted, and simply calls the wlan_connect function using the credentials stored in keys.
 
 The operation is also timed for metrics.
 
 ![](https://i.imgur.com/X8JFE6D.png)
 
-main.py is the main program for the device, which contains the **setup** and **main** cycle.
+[main.py](https://github.com/SamuelThand/Automated-Plant-Monitoring-System/blob/main/micropython-project/main.py) is the main program for the device, which contains the **setup** and **main** cycle.
 
 The setup part can be seen below. Necessary imports are made, including the **pycom** module for accessing device features such as the embedded LED for status indications, the **time** module for halting execution, the **Pin** module for defining pin functionality, **ADC** for analog-digital conversion from the analog sensors, and **machine.sleep** for access to a light sleep mode which disables the WLAN connection and other parts. **json** is imported in order to format the data to be transmitted as JSON.
 
@@ -453,7 +453,7 @@ This is the loop which drives the system. The sleep cycle can easily be adjusted
 
 3. Open the folder as an Atom project **File -> Open Folder**
 
-4. Edit the code in connections.py, keys.py, main.py with your own WiFi and Adafruit information, and save.
+4. Edit the code in connections, keys, main with your own WiFi and Adafruit information, and save.
 
 5. Connect your device and upload the project code using the **"Upload project to device"** button in the Pymakr console.
 
